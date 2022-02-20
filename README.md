@@ -7,6 +7,13 @@
 * [Maven](https://maven.apache.org) is used to manage packaging
 * [GitHub Actions](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven) is used for CI (continuous integration, building and testing in the cloud)
 
+## Source Code
+
+The core of this app is just two source code files: the app, and a single test
+
+* [`App.java`](/src/main/java/com/mycompany/app/App.java)
+* [`AppTest.java`](/src/test/java/com/mycompany/app/AppTest.java)
+
 ## Setting-Up the Development Environment
 
 These are the steps I took to get the Java SDK and Maven running on Windows.
