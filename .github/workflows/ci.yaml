@@ -24,6 +24,6 @@ jobs:
           distribution: "temurin"
           cache: "maven"
       - name: 🛠️ Compile
-        run: mvn --batch-mode compile
+        run: mvn --batch-mode --no-transfer-progress compile
       - name: 🧪 Test
-        run: mvn --batch-mode test
+        run: mvn --batch-mode --no-transfer-progress test
