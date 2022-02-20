@@ -68,39 +68,12 @@ my-app
                         `-- AppTest.java
 ```
 
-### Ignored Files and Folders
+### Ignore Files and Folders
 
-You may wish to add the following to your `.gitignore` file so these files and folders are not tracked by source control:
+You may wish to edit your source control's ignore file so Java-related files and folders are not tracked.
 
-```
-### Maven
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
-.project
-.classpath
+Refer to this project's [`.gitignore`](.gitignore) file to see a list of ignored names.
 
-### Java
-*.class
-*.log
-*.ctxt
-.mtj.tmp/
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-hs_err_pid*
-```
 
 ### Customize the Project Object Model (POM)
 
