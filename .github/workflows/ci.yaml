@@ -1,10 +1,13 @@
 name: CI with Maven
 
 on:
+  workflow_dispatch:
   push:
-    branches: [$default-branch]
+    paths:
+      - "src/**"
   pull_request:
-    branches: [$default-branch]
+    paths:
+      - "src/**"
 
 jobs:
   build:
