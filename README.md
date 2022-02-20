@@ -127,7 +127,9 @@ Example commands:
 
 * See [ci.yaml](.github/workflows/ci.yaml) for actual workflow file used by this repository
 
-* See [actions/setup-java](https://github.com/actions/setup-java) for full documentation
+* See [actions/setup-java](https://github.com/actions/setup-java) for Java action documentation
+
+* See [Building and testing Java with Maven](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven) for Maven-specific Action documentation
 
 ```yaml
 # TODO: copy here
