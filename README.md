@@ -2,7 +2,7 @@
 
 [![CI with Maven](https://github.com/swharden/Java-Boilerplate/actions/workflows/ci.yaml/badge.svg)](https://github.com/swharden/Java-Boilerplate/actions/workflows/ci.yaml)
 
-**This repository contains simple Java application.**
+**This repository contains a simple Java application.**
 * [JUnit](http://junit.org) is used for testing
 * [Maven](https://maven.apache.org) is used to manage packaging
 * [GitHub Actions](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven) is used for CI (continuous integration, building and testing in the cloud)
