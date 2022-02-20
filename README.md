@@ -16,28 +16,32 @@ The core of this app is just two source code files: the app, and a single test
 
 ## Setting-Up the Development Environment
 
-These are the steps I took to get the Java SDK and Maven running on Windows.
+These are the steps I took to get this project up and running using Windows.
 
-### Get JDK
+I used [Visual Studio Code](https://code.visualstudio.com/) and [Eclipse](https://www.eclipse.org/ide/) during testing.
+
+### Get the JDK
 * https://www.oracle.com/java/technologies/downloads/
 
-### Get Maven
+### Set-Up Maven
+
+#### Download
 * https://maven.apache.org/download.cgi
 * Unzip and store somewhere important
 
-### Add Environment Variables
+#### Add Environment Variables
 * `JAVA_HOME` = `C:\Program Files\Java\jdk-17.0.2`
 * `MAVEN_HOME` = `C:\Users\scott\Documents\important\apps\apache-maven-3.8.4`
 
-### Add Maven bin folder to your system path
+#### Add Maven bin folder to your system path
 * `%MAVEN_HOME%\bin`
 
-### Confirm Maven Works
+#### Confirm Maven Works
 ```sh
 mvn -v
 ```
 
-### Create a Skeleton App
+### Create a Quickstart App
 
 * This command creates a `my-app` folder with a basic project in it.
 * I made the contents of this folder the base of my repository.
