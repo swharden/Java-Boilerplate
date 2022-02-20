@@ -127,15 +127,51 @@ Example commands:
 
 ### Continuous Integration with GitHub Actions
 
+* I like to define `paths` so CI runs only occur when source code or workflow files change
+
+* Consider which Java version to use for testing. Older versions are faster because they are more likely cached on the CI server.
+
+* I separate `compile` from `test` so if one fails I can tell from the job name which one it is
+
+* Adding `--no-transfer-progress` reduces noise in the CI logs
+
+```yaml
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "src/**"
+      - ".github/workflows/**"
+  pull_request:
+    paths:
+      - "src/**"
+
+jobs:
+  verify:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: "maven"
+      - name: 🛠️ Compile
+        run: mvn --batch-mode --no-transfer-progress compile
+      - name: 🧪 Test
+        run: mvn --batch-mode --no-transfer-progress test
+```
+
 * See [ci.yaml](.github/workflows/ci.yaml) for actual workflow file used by this repository
 
 * See [actions/setup-java](https://github.com/actions/setup-java) for Java action documentation
 
 * See [Building and testing Java with Maven](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven) for Maven-specific Action documentation
-
-```yaml
-# TODO: copy here
-```
 
 ## References
 * [Maven: Getting Started](https://maven.apache.org/guides/getting-started/)
