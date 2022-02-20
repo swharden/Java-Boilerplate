@@ -18,6 +18,8 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: "maven"
+      - name: 🧐 Validate
+        run: mvn --batch-mode --no-transfer-progress validate
       - name: 🛠️ Compile
         run: mvn --batch-mode --no-transfer-progress compile
       - name: 🧪 Test
