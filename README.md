@@ -127,10 +127,15 @@ See [Introduction to the POM](https://maven.apache.org/guides/introduction/intro
 
 * **`build`** handles things like declaring your project's directory structure and managing plugins.
 
-### Build and Test
+### Build and Test (command line)
 Example commands:
 * `mvn compile`
 * `mvn test`
+
+### Open in Eclipse
+* `File` > `Open Projects from File System`
+* Set `Import source` to the root of this repository
+* Click `Finish`
 
 ### Continuous Integration with GitHub Actions
 
