@@ -22,3 +22,5 @@ jobs:
         run: mvn --batch-mode --no-transfer-progress compile
       - name: 🧪 Test
         run: mvn --batch-mode --no-transfer-progress test
+      - name: 📦 Package
+        run: mvn --batch-mode --no-transfer-progress package
