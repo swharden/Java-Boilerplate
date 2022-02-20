@@ -1,4 +1,4 @@
-name: CI with Maven
+name: CI
 
 on:
   workflow_dispatch:
@@ -12,6 +12,7 @@ on:
 
 jobs:
   verify:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
