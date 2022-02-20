@@ -128,9 +128,30 @@ See [Introduction to the POM](https://maven.apache.org/guides/introduction/intro
 * **`build`** handles things like declaring your project's directory structure and managing plugins.
 
 ### Build and Test (command line)
-Example commands:
-* `mvn compile`
-* `mvn test`
+* `mvn compile` - compile only
+* `mvn test` - run tests
+* `mvn verify` - ensure all steps (compile/test/package) succeed
+* `mvn exec:java` - run the application (see note below)
+
+Execution requires editing [pom.xml](pom.xml) to add a plugin:
+
+```xml
+<plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>exec-maven-plugin</artifactId>
+  <version>1.2.1</version>
+  <executions>
+      <execution>
+          <goals>
+              <goal>java</goal>
+          </goals>
+      </execution>
+  </executions>
+  <configuration>
+      <mainClass>com.mycompany.app.App</mainClass>
+  </configuration>
+</plugin>
+```
 
 ### Open in Eclipse
 * `File` > `Open Projects from File System`
