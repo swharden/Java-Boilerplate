@@ -3,12 +3,7 @@ name: CI
 on:
   workflow_dispatch:
   push:
-    paths:
-      - "src/**"
-      - ".github/workflows/**"
   pull_request:
-    paths:
-      - "src/**"
 
 jobs:
   verify:

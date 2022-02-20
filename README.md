@@ -139,13 +139,11 @@ Example commands:
 
 ### Continuous Integration with GitHub Actions
 
-* I like to define `paths` so CI runs only occur when source code or workflow files change
-
-* Consider which Java version to use for testing. Older versions are faster because they are more likely cached on the CI server.
-
 * I separate `compile` from `test` so if one fails I can tell from the job name which one it is
 
 * Adding `--no-transfer-progress` reduces noise in the CI logs
+
+* Consider which Java version to use for testing. Older versions are faster because they are more likely cached on the CI server.
 
 ```yaml
 name: CI
@@ -153,12 +151,7 @@ name: CI
 on:
   workflow_dispatch:
   push:
-    paths:
-      - "src/**"
-      - ".github/workflows/**"
   pull_request:
-    paths:
-      - "src/**"
 
 jobs:
   verify:
