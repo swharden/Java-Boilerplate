@@ -104,10 +104,9 @@ See [Introduction to the POM](https://maven.apache.org/guides/introduction/intro
 
 * **`build`** handles things like declaring your project's directory structure and managing plugins.
 
-### Build and Test (command line)
-* `mvn compile` - compile only
-* `mvn test` - run tests
-* `mvn verify` - ensure all steps (compile/test/package) succeed
+### Build, Test, and Run
+* `mvn compile`
+* `mvn test`
 * `mvn exec:java` - run the application (see note below)
 
 Execution requires editing [pom.xml](pom.xml) to add a plugin:
@@ -137,7 +136,7 @@ Execution requires editing [pom.xml](pom.xml) to add a plugin:
 
 ### Continuous Integration with GitHub Actions
 
-* I separate `compile` from `test` so if one fails I can tell from the job name which one it is
+* I separate `validate`, `compile`, `test`, and `package` into distinct steps so if the job fails I can tell what went wrong from the name of the step that failed. If you wish to simply run `verify`, everything can be achieved in a single step.
 
 * Adding `--no-transfer-progress` reduces noise in the CI logs
 
@@ -164,10 +163,14 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: "maven"
+      - name: 🧐 Validate
+        run: mvn --batch-mode --no-transfer-progress validate
       - name: 🛠️ Compile
         run: mvn --batch-mode --no-transfer-progress compile
       - name: 🧪 Test
         run: mvn --batch-mode --no-transfer-progress test
+      - name: 📦 Package
+        run: mvn --batch-mode --no-transfer-progress package
 ```
 
 * See [ci.yaml](.github/workflows/ci.yaml) for actual workflow file used by this repository
@@ -182,3 +185,4 @@ jobs:
 * [Introduction to the POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
 * [JUnit user guide](https://junit.org/junit5/docs/current/user-guide/)
 * [GitHub's Maven.gitignore](https://github.com/github/gitignore/blob/main/Maven.gitignore)
+* [Maven Commands](http://tutorials.jenkov.com/maven/maven-commands.html)
