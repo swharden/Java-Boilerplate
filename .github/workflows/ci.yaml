@@ -11,7 +11,7 @@ on:
       - "src/**"
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
@@ -22,7 +22,7 @@ jobs:
           java-version: "11"
           distribution: "temurin"
           cache: "maven"
-      - name: 🛠️ Build
-        run: mvn --batch-mode build
+      - name: 🛠️ Compile
+        run: mvn --batch-mode compile
       - name: 🧪 Test
         run: mvn --batch-mode test
