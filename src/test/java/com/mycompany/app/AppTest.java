@@ -1,20 +1,11 @@
 package com.mycompany.app;
 
-import static org.junit.Assert.assertTrue;
-
+import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
+public class AppTest {
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void fancyAdd_shouldSumTwoNumbers() {
+        Assert.assertEquals(2, App.fancyAdd(1, 1));
     }
 }
