@@ -43,9 +43,25 @@ mvn -v
 
 ### Create a Quickstart App
 
+#### Interactive Mode
+
+```
+mvn archetype:generate
+```
+
+* It will ask about filter, press `ENTER` to use the default
+* It will ask for quickstart version, press `ENTER` to use the default
+* It will ask for property 'groupId', enter `com.mycompany.app` (or similar)
+* It will ask for property 'artifactId', enter `my-app` (or similar)
+* It will ask for property 'version', press `ENTER` to use the default (1.0-SNAPSHOT)
+* It will ask for property 'package', press `ENTER` to use the same text as `groupId`
+* It will ask to confirm, press `ENTER`
+
+#### Single Command
+
 * This command creates a `my-app` folder with a basic project in it.
 * I made the contents of this folder the base of my repository.
-
+* 
 ```
 mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 ```
