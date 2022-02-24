@@ -61,7 +61,7 @@ mvn archetype:generate
 
 * This command creates a `my-app` folder with a basic project in it.
 * I made the contents of this folder the base of my repository.
-* 
+
 ```
 mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 ```
